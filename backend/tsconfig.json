@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                          // Compatibilidad moderna de JS
+    "module": "CommonJS",                        // Necesario para Node.js
+    "rootDir": "./src",                          // Donde está el código fuente
+    "outDir": "./dist",                          // Carpeta donde se compila
+    "moduleResolution": "node",
+    "esModuleInterop": true,                     // Permite usar imports comunes
+    "forceConsistentCasingInFileNames": true,  
+    "allowSyntheticDefaultImports": true,  // Evita errores por mayúsculas/minúsculas
+    "strict": true,                              // Activa todas las verificaciones de tipos
+    "skipLibCheck": true,                        // No chequea definiciones de librerías
+    "resolveJsonModule": true,                   // Permite importar JSON
+    "noImplicitAny": true,                       // Evita el uso de `any` sin declarar
+    "noUnusedLocals": true,                      // Limpieza de código
+    "noUnusedParameters": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
