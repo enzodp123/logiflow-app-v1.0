@@ -1,4 +1,5 @@
 import express from 'express';
+import asyncHandler from '../utils/asyncHandler';
 import {
   crearCliente,
   obtenerClientes,
@@ -9,11 +10,11 @@ import {
 
 const router = express.Router();
 
-router.post('/', crearCliente);
-router.get('/', obtenerClientes);
-router.get('/:id', obtenerCliente);
-router.put('/:id', actualizarCliente);
-router.delete('/:id', eliminarCliente);
+router.post('/', asyncHandler(crearCliente));
+router.get('/', asyncHandler(obtenerClientes));
+router.get('/:id', asyncHandler(obtenerCliente));
+router.put('/:id', asyncHandler(actualizarCliente));
+router.delete('/:id', asyncHandler(eliminarCliente));
 
 export default router;
 

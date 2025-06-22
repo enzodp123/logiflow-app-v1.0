@@ -1,4 +1,5 @@
 import express from 'express';
+import asyncHandler from '../utils/asyncHandler';
 import {
   crearProducto,
   obtenerProductos,
@@ -9,12 +10,10 @@ import {
 
 const router = express.Router();
 
-router.post('/', crearProducto);
-router.get('/', obtenerProductos);
-router.get('/:id', obtenerProducto);
-router.put('/:id', actualizarProducto);
-router.delete('/:id', eliminarProducto);
+router.post('/', asyncHandler(crearProducto));
+router.get('/', asyncHandler(obtenerProductos));
+router.get('/:id', asyncHandler(obtenerProducto));
+router.put('/:id', asyncHandler(actualizarProducto));
+router.delete('/:id', asyncHandler(eliminarProducto));
 
 export default router;
-// This code defines the routes for product management in an Express application.
-
