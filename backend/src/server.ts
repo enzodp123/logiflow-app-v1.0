@@ -3,6 +3,8 @@
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
+// server.ts
+
 
 // 1. Primero cargar dotenv antes que cualquier otra cosa
 const envPath = path.resolve(__dirname, '../.env');

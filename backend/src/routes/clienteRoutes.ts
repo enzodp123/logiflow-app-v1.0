@@ -16,3 +16,4 @@ router.put('/:id', actualizarCliente);
 router.delete('/:id', eliminarCliente);
 
 export default router;
+
