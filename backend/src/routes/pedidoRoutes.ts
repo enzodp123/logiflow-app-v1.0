@@ -7,13 +7,16 @@ import {
   actualizarEstadoPedido,
   eliminarPedido
 } from '../controllers/pedidoController';
+import verifyRole from '../middlewares/verifyRole';
+import validateRequest from '../validations/validateRequest';
+import { validarPedido } from '../validations/pedidoValidations';
 
 const router = express.Router();
 
-router.post('/', asyncHandler(crearPedido));
+router.post('/', verifyRole('admin'), validarPedido, validateRequest, asyncHandler(crearPedido));
 router.get('/', asyncHandler(obtenerPedidos));
 router.get('/:id', asyncHandler(obtenerPedido));
-router.put('/:id', asyncHandler(actualizarEstadoPedido));
+router.put('/:id', verifyRole('admin'), validarPedido, validateRequest, asyncHandler(actualizarEstadoPedido));
 router.delete('/:id', asyncHandler(eliminarPedido));
 
 export default router;
