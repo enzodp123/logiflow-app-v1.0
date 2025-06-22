@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { loginSchema } from '../validations/loginSchema';
 import Usuario from '../models/Usuario';
 import { generarToken } from '../utils/generarToken';
-import { asyncHandler } from '../utils/asyncHandler';
+import asyncHandler from '../utils/asyncHandler';
 
 export const login = asyncHandler(async (req: Request, res: Response): Promise<void> => {
   // Validar con Zod

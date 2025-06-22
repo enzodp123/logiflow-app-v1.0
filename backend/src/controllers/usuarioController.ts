@@ -2,7 +2,7 @@
 import { Request, Response} from 'express';
 import Usuario from '../models/Usuario';
 import { registroUsuarioSchema } from '../validations/usuarioSchema';
-import { asyncHandler } from '../utils/asyncHandler';
+import asyncHandler from '../utils/asyncHandler';
 
 export const registrarUsuario = asyncHandler(async (req: Request, res: Response): Promise<void> => {
   // Validación con Zod
